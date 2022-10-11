@@ -4,7 +4,8 @@
     "resetMocks": false,
     "setupFiles": [
       "jest-localstorage-mock"
-    ]
+    ],
+    "testEnvironment": "jsdom"
   },
   "version": "1.0.0",
   "description": "",
