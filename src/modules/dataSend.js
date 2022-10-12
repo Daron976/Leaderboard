@@ -4,10 +4,10 @@ async function postInfo(url, dataObj) {
     body: JSON.stringify(dataObj),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
-    }
+    },
   });
 
-  return response.json()
+  return response.json();
 }
 
 export default postInfo;
