@@ -7,7 +7,7 @@ document.body.innerHTML = `
 `;
 
 
- import { dynamicInput } from "./execution";
+ import dynamicInput from "./execution";
 
  test('check if list item is present', () => {
 
