@@ -1,6 +1,6 @@
 # Leaderboard
 
-> In this project, We build a to do list minimalist websites that allows users to create and modify a to do list.
+> In this project, We build a Leaderboard that allows users input their scores from a game to be displayed.
 
 
 ## Built With
