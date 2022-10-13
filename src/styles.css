@@ -70,6 +70,17 @@ input:focus {
   outline: none;
 }
 
+#error-msg,
+#empty-fields {
+  display: none;
+  color: #f44336;
+  padding: 0.25rem;
+  font-size: 0.9rem;
+  background: #ffcdd2;
+  border-radius: 5px;
+  max-width: 11.5rem;
+}
+
 .scores-data {
   border-bottom: none;
   padding: 0 1rem 1rem 0;

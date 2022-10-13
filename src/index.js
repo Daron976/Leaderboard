@@ -8,17 +8,32 @@ import {
 } from './modules/data.js';
 import dynamicInput from './modules/execution.js';
 import './styles.css';
+import validate from './modules/validation.js';
 
 document.getElementById('submit').addEventListener('click', () => {
-  const data = {
-    user: nameInput.value,
-    score: scoreInput.value,
-  };
+  if((nameInput.value === '') || (scoreInput.value === '')) {
 
-  postInfo('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/8aBoLtXWEvrmAQfpmWq4/scores', data);
+    document.getElementById('empty-fields').style.display = 'block';
+    
+  }else if (!validate(scoreInput.value)) {
 
-  nameInput.value = '';
-  scoreInput.value = '';
+    document.getElementById('empty-fields').style.display = 'none';
+    document.getElementById('error-msg').style.display = 'block';
+
+  }else {
+
+    const data = {
+      user: nameInput.value,
+      score: scoreInput.value,
+    };
+  
+    postInfo('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/8aBoLtXWEvrmAQfpmWq4/scores', data);
+  
+    nameInput.value = '';
+    scoreInput.value = '';
+    document.getElementById('empty-fields').style.display = 'none';
+    document.getElementById('error-msg').style.display = 'none';
+  }
 });
 
 document.getElementById('reset').addEventListener('click', () => {
