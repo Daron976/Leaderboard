@@ -66,6 +66,10 @@ form input {
   padding: 0.25rem 0.5rem;
 }
 
+input:focus {
+  outline: none;
+}
+
 .scores-data {
   border-bottom: none;
   padding: 0 1rem 1rem 0;

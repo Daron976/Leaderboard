@@ -15,7 +15,7 @@ document.getElementById('submit').addEventListener('click', () => {
     score: scoreInput.value,
   };
 
-  postInfo('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/lo7BETKEBv4khCfPtazj/scores', data);
+  postInfo('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/8aBoLtXWEvrmAQfpmWq4/scores', data);
 
   nameInput.value = '';
   scoreInput.value = '';
