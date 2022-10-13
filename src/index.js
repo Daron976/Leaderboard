@@ -9,19 +9,26 @@ import {
 import dynamicInput from './modules/execution.js';
 import './styles.css';
 
-document.querySelectorAll('.btn')[1].addEventListener('click', () => {
+document.getElementById('submit').addEventListener('click', () => {
   const data = {
     user: nameInput.value,
     score: scoreInput.value,
   };
 
-  postInfo('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/lo7BETKEBv4khCfPtazj/scores', data);
+  postInfo('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/8aBoLtXWEvrmAQfpmWq4/scores', data);
 
   nameInput.value = '';
   scoreInput.value = '';
 });
 
 document.getElementById('reset').addEventListener('click', () => {
+  document.querySelector('.scores-data').innerHTML = '';
+  getInfo()
+    .then((response) => response.json())
+    .then((data) => dynamicInput(data.result));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.scores-data').innerHTML = '';
   getInfo()
     .then((response) => response.json())

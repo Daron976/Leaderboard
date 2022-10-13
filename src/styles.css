@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Inconsolata', monospace;
   padding: 0;
   margin: 0;
 }
@@ -7,6 +8,7 @@
 body,
 html {
   height: 100%;
+  z-index: -1;
 }
 
 label {
@@ -51,16 +53,29 @@ li {
   list-style: none;
   padding-top: 0.5rem;
   padding-left: 0.25rem;
-  border-bottom: 1px solid  black;
+  border-bottom: 1px solid  #c5b9b9;
 }
 
 h2 {
   font-size: 1.8rem;
 }
 
+form input {
+  border: none;
+  border-bottom: 1px solid  #c5b9b9;
+  padding: 0.25rem 0.5rem;
+}
+
+input:focus {
+  outline: none;
+}
+
 .scores-data {
-  border: 1px solid black;
   border-bottom: none;
+  padding: 0 1rem 1rem 0;
+  max-height: 20rem;
+  overflow-y: auto;
+  box-shadow: 12px 0 20px -12px rgba(0, 0, 0, 0.35);
 }
 
 .scores-header {
@@ -73,7 +88,9 @@ h2 {
 #form-data {
   display: flex;
   gap: 1rem;
-  padding: 1rem 0;
+  margin-top: 1rem;
+  padding: 1rem 1rem 1rem 0;
+  box-shadow: 12px 0 20px -12px rgba(0, 0, 0, 0.35);
 }
 
 .btn-width {
@@ -83,4 +100,69 @@ h2 {
 
 form .btn-width {
   justify-content: flex-end;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  color: #312c2c;
+  font-size: 0.8rem;
+  transition: all;
+  transition-duration: 0.35s;
+}
+
+.btn:hover {
+  font-size: 1rem;
+  padding: 1rem 1.75rem;
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: #588870;
+  color: black;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: #808080;
+  padding: 1rem 0.5rem;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60% 40%;
+    gap: 0;
+    justify-content: space-evenly;
+  }
+
+  .header-width {
+    flex-direction: row;
+    width: 20rem;
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+
+  .btn:hover {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  #main-content {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn:hover {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
 }
