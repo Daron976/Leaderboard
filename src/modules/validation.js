@@ -1,10 +1,10 @@
 const validate = (value) => {
+  let bool;
+
   if (/^[0-9]*$/.test(value)) {
-    return true;
+    bool = true;
   }
-  else {
-    return false;
-  }
-}
+  return bool;
+};
 
 export default validate;

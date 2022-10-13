@@ -11,24 +11,19 @@ import './styles.css';
 import validate from './modules/validation.js';
 
 document.getElementById('submit').addEventListener('click', () => {
-  if((nameInput.value === '') || (scoreInput.value === '')) {
-
+  if ((nameInput.value === '') || (scoreInput.value === '')) {
     document.getElementById('empty-fields').style.display = 'block';
-    
-  }else if (!validate(scoreInput.value)) {
-
+  } else if (!validate(scoreInput.value)) {
     document.getElementById('empty-fields').style.display = 'none';
     document.getElementById('error-msg').style.display = 'block';
-
-  }else {
-
+  } else {
     const data = {
       user: nameInput.value,
       score: scoreInput.value,
     };
-  
+
     postInfo('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/8aBoLtXWEvrmAQfpmWq4/scores', data);
-  
+
     nameInput.value = '';
     scoreInput.value = '';
     document.getElementById('empty-fields').style.display = 'none';

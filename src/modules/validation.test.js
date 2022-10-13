@@ -17,6 +17,6 @@ describe('test if validate function works', () => {
   
     const bool = validate(letters);
   
-    expect(bool).toBe(false);
+    expect(bool).not.toBe(true);
   })
 })
