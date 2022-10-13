@@ -139,8 +139,8 @@ form .btn-width {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 60% 40%;
+    gap: 0;
     justify-content: space-evenly;
-    overflow-y: unset;
   }
 
   .header-width {
@@ -153,6 +153,10 @@ form .btn-width {
   .btn:hover {
     padding: 0.75rem 1.5rem;
     font-size: 0.8rem;
+  }
+
+  #main-content {
+    justify-content: flex-start;
   }
 }
 
