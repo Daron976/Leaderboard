@@ -9,14 +9,10 @@ const dataToBeRecieved = {
 
 global.fetch = jest.fn((url, data) => {
   return new Promise ((resolve, reject) => {
-    const newResponse = {
-      user: 'jim',
-      score: 20,
-      json() {
+      json:() => {
         return new Promise((resolve, reject) => {
           resolve(dataToBeRecieved)
         })
-      }
     }
   })
 })
